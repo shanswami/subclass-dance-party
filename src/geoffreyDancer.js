@@ -16,6 +16,6 @@ GeoffreyDancer.prototype.step = function(timeBetweenSteps) {
     $(this).css("background-image","url('http://www.reactiongifs.us/wp-content/uploads/2013/03/GoT_joffrey_approves.gif')");
     $(this).css("min-width", 300);
   }
-
   );
 };
+

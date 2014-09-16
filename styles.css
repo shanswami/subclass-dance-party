@@ -23,9 +23,14 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  background-image: url("https://26.media.tumblr.com/tumblr_lp7ulxV5U51qbtlcco1_r2_500.gif");
+  background-size: cover;
+  min-height: 150px;
+  min-width: 400px;
+  position: absolute;
+/*  border:20px solid blue;
   border-radius:10px;
-  position:absolute;
+  position:absolute;*/
 }
 .runner {
   background-image: url("http://photos.vanityfair.com/2014/02/10/1392004786480_tumblr_n0rgg5e69p1qfvao1o2_500.gif");

@@ -45,7 +45,18 @@ $(document).ready(function(){
     $('body').append(Geoffrey.$node);
     window.dancers.push(Geoffrey);
 
+    Geoffrey.$node.on('click', function() {
+        Geoffrey.$node.animate({
+          "top": "+=300px",
+          "left": "+800px"
+        });
+      for (var i = 0; i < window.dancers.length; i++) {
+        collidesWith(Geoffrey.$node,window.dancers[i].$node);
+      }
+    });
+
   });
+
 
   $(".lineUpButton").on('click', function(event) {
     for (var i = 0; i<window.dancers.length; i++) {
