@@ -10,7 +10,7 @@ $(document).ready(function(){
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      1000,
+      2000,
       "dancer"
     );
     $('body').append(dancer.$node);
@@ -50,9 +50,9 @@ $(document).ready(function(){
           "top": "+=300px",
           "left": "+800px"
         });
-      for (var i = 0; i < window.dancers.length; i++) {
-        collidesWith(Geoffrey.$node,window.dancers[i].$node);
-      }
+      // for (var i = 0; i < window.dancers.length; i++) {
+      //   collidesWith(Geoffrey.$node,window.dancers[i].$node);
+      // }
     });
 
   });
@@ -64,6 +64,26 @@ $(document).ready(function(){
     }
   });
 
+  setInterval(function () {
+    var positions = [];
+    var distances = [];
+    for (var i = 0; i < window.dancers.length; i++) {
+      var top = window.dancers[i].$node.position().top;
+      var left = window.dancers[i].$node.position().left;
+      positions.push({top:top, left:left});
+    }
+    for (var j = 0; j < positions.length; j++) {
+      for (var k = 0; k < positions.length - 1; k++) {
+        if (j !== k) {
+          var topDif = Math.pow( (positions[j].top - positions[k].top), 2);
+          var leftDif = Math.pow( (positions[j].left - positions[k].left), 2);
+          distances.push({item1:j,item2:k, distance: Math.pow(topDif + leftDif ,0.5)});
+        }
+      }
+    }
+  console.log(positions);
+  console.log(distances);
+  }, 1000);
 
 });
 
