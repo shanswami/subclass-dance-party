@@ -1,5 +1,6 @@
 body, html{
   height:100%;
+  width: 100%;
 }
 body{
   margin: 0px;
@@ -9,7 +10,7 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton, .addRunnerButton {
+.title, .addDancerButton, .addRunnerButton, .addBalletButton {
   padding:5px 12px;
   float:right;
 }
@@ -25,8 +26,23 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
-.runner{
-  border:5px solid blue;
+.runner {
+  border:10px solid blue;
   border-radius:10px;
   position:absolute;
 }
+
+.ballet {
+  background-image: url("http://media.giphy.com/media/YZfqHzpjw1I40/giphy.gif");
+  background-size: cover;
+  min-height: 200px;
+  min-width: 400px;
+  position: absolute;
+}
+
+.bigger-ballet {
+  min-height: 400px;
+  min-width: 800px;
+}
+
+

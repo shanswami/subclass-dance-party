@@ -1,7 +1,6 @@
-var RunningDancer = function(top, left, timeBetweenSteps) {
+var RunningDancer = function(top, left, timeBetweenSteps, spanClass) {
 
-  Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass("runner");
+  Dancer.call(this, top, left, timeBetweenSteps, spanClass);
 }
 
 RunningDancer.prototype = Object.create(Dancer.prototype);
