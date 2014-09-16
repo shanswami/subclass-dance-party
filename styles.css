@@ -4,13 +4,14 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url("src/iron_throne_w1.jpeg");
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton, .addRunnerButton, .addBalletButton {
+.title, .addDancerButton, .addRunnerButton, .addGeoffreyButton {
   padding:5px 12px;
   float:right;
 }
@@ -27,22 +28,19 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .runner {
-  border:10px solid blue;
-  border-radius:10px;
-  position:absolute;
-}
-
-.ballet {
-  background-image: url("http://media.giphy.com/media/YZfqHzpjw1I40/giphy.gif");
+  background-image: url("http://photos.vanityfair.com/2014/02/10/1392004786480_tumblr_n0rgg5e69p1qfvao1o2_500.gif");
   background-size: cover;
-  min-height: 200px;
+  min-height: 300px;
   min-width: 400px;
   position: absolute;
 }
 
-.bigger-ballet {
-  min-height: 400px;
-  min-width: 800px;
+.Geoffrey {
+  background-image: url("http://www.reactiongifs.us/wp-content/uploads/2013/03/GoT_joffrey_approves.gif");
+  background-size: cover;
+  min-height: 300px;
+  min-width: 300px;
+  position: absolute;
 }
 
 

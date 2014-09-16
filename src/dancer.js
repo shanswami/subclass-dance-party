@@ -33,3 +33,6 @@ Dancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+Dancer.prototype.lineLeft = function() {
+  this.$node.css("left",0);
+}

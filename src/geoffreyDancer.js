@@ -9,6 +9,13 @@ GeoffreyDancer.prototype.step = function(timeBetweenSteps) {
   Dancer.prototype.step.call(this, timeBetweenSteps);
 
   this.$node.hover(function(){
-    //
-  });
+    $(this).css("background-image","url('https://img.pandawhale.com/post-41593-choked-up-joffrey-meme-Imgur-t-XOKi.png')");
+    $(this).css("min-width", 450);
+  },
+  function(){
+    $(this).css("background-image","url('http://www.reactiongifs.us/wp-content/uploads/2013/03/GoT_joffrey_approves.gif')");
+    $(this).css("min-width", 300);
+  }
+
+  );
 };

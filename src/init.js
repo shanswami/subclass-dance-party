@@ -10,11 +10,11 @@ $(document).ready(function(){
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      Math.random() * 1000,
+      1000,
       "dancer"
     );
     $('body').append(dancer.$node);
-    window.dancers.push(dancer.$node);
+    window.dancers.push(dancer);
   });
 
 
@@ -23,29 +23,36 @@ $(document).ready(function(){
     var runnerFunction = window[runnerName];
 
     var runner = new runnerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $("body").height() * .65,
+      $("body").width() * .70,
       Math.random() * 1000,
       "runner"
     );
     $('body').append(runner.$node);
-    window.dancers.push(runner.$node);
+    window.dancers.push(runner);
   });
 
-  $(".addBalletButton").on("click", function(event){
-    var balletName = $(this).data("ballet-maker-function-name");
-    var balletFunction = window[balletName];
+  $(".addGeoffreyButton").on("click", function(event){
+    var GeoffreyName = $(this).data("geoffrey-maker-function-name");
+    var GeoffreyFunction = window[GeoffreyName];
 
-    var ballet = new balletFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
+    var Geoffrey = new GeoffreyFunction(
+      $('body').height() * .30,
+      $('body').width() * .20,
       Math.random() * 1000,
-      "ballet"
+      "Geoffrey"
     );
-    $('body').append(ballet.$node);
-    window.dancers.push(ballet.$node);
+    $('body').append(Geoffrey.$node);
+    window.dancers.push(Geoffrey);
 
   });
+
+  $(".lineUpButton").on('click', function(event) {
+    for (var i = 0; i<window.dancers.length; i++) {
+      window.dancers[i].lineLeft();
+    }
+  });
+
 
 });
 
