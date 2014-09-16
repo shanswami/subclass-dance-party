@@ -16,7 +16,6 @@ Dancer.prototype.step = function(timeBetweenSteps){
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
   var self = this;
-  // var boundStep = Dancer.prototype.step.bind(,timeBetweenSteps);
 
   setTimeout(function(){
     self.step(timeBetweenSteps);
