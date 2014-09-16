@@ -81,8 +81,14 @@ $(document).ready(function(){
         }
       }
     }
-  console.log(positions);
-  console.log(distances);
+
+    var collided = distances.filter(function(v,k,c){
+        return v.distance < 500;
+      });
+    for (var c = 0; c < collided.length; c++) {
+      window.dancers[collided[c].item1].$node.bounce({'speed': 2});
+      window.dancers[collided[c].item2].$node.bounce({'speed': 2});
+    }
   }, 1000);
 
 });
