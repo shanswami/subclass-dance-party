@@ -1,6 +1,6 @@
 $.fn.bounce = function(options) {
     var settings = $.extend({
-        speed: 1
+        speed: 5
     }, options);
     return $(this).each(function() {
         var $this = $(this),

@@ -23,7 +23,7 @@ $(document).ready(function(){
     var runnerFunction = window[runnerName];
 
     var runner = new runnerFunction(
-      $("body").height() * .65,
+      $("body").height() * .70,
       $("body").width() * .70,
       Math.random() * 1000,
       "runner"
@@ -105,13 +105,20 @@ $(document).ready(function(){
 
       // if node has collided too many times remove it
       if (node1hits > 10) {
-        $node1.toggle('explode');
+        $node1.css('background-image','url("src/explode.gif")');
+        $node1.jrumble();
+        $node1.trigger('startRumble');
+      }
+      if (node1hits > 12) {
         $node1.remove();
         window.dancers.splice(collided[c].item1,1);
       }
 
       if (node2hits > 10) {
-        $node2.toggle('explode');
+        $node2.css('background-image','url("src/explode.gif")');
+        $node2.jrumble().trigger('startRumble');
+      }
+      if (node2hits > 12) {
         $node2.remove();
         window.dancers.splice(collided[c].item2,1);
       }
