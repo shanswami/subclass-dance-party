@@ -3,7 +3,7 @@ var Dancer = function(top, left, timeBetweenSteps, spanClass){
   this._timeBetweenSteps = timeBetweenSteps;
 
   // use jQuery to create an HTML <span> tag
-  this.$node = $('<span class="' + spanClass + '"></span>');
+  this.$node = $('<span class="' + spanClass + '" data-hit=0></span>');
 
 
   // now that we have defined the this object, we can start setting up important parts of it by calling the methods we wrote

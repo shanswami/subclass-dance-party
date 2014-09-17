@@ -10,7 +10,7 @@ $(document).ready(function(){
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      2000,
+      10000000000000000,
       "dancer"
     );
     $('body').append(dancer.$node);
@@ -83,13 +83,40 @@ $(document).ready(function(){
     }
 
     var collided = distances.filter(function(v,k,c){
-        return v.distance < 500;
+        return v.distance < 410;
       });
+
     for (var c = 0; c < collided.length; c++) {
-      window.dancers[collided[c].item1].$node.bounce({'speed': 2});
-      window.dancers[collided[c].item2].$node.bounce({'speed': 2});
+      // look up the dancer in window.dancer
+      // update hit value
+      // trigger a bounce
+      var $node1 = window.dancers[collided[c].item1].$node;
+      $node1.bounce({'speed': 2});
+      var node1hits = $node1.data("hit");
+      console.log($node1.data("hit"));
+      node1hits += 1;
+      $node1.data("hit",node1hits);
+
+      var $node2 = window.dancers[collided[c].item2].$node;
+      $node2.bounce({'speed': 2});
+      var node2hits = $node2.data("hit");
+      node2hits += 1;
+      $node2.data("hit",node2hits);
+
+      // if node has collided too many times remove it
+      if (node1hits > 10) {
+        $node1.toggle('explode');
+        $node1.remove();
+        window.dancers.splice(collided[c].item1,1);
+      }
+
+      if (node2hits > 10) {
+        $node2.toggle('explode');
+        $node2.remove();
+        window.dancers.splice(collided[c].item2,1);
+      }
     }
-  }, 1000);
+  }, 200);
 
 });
 

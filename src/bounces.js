@@ -1,6 +1,6 @@
 $.fn.bounce = function(options) {
     var settings = $.extend({
-        speed: 10
+        speed: 1
     }, options);
     return $(this).each(function() {
         var $this = $(this),
@@ -9,8 +9,8 @@ $.fn.bounce = function(options) {
             width = $parent.width(),
             top = Math.floor(Math.random() * (height / 2)) + height / 4,
             left = Math.floor(Math.random() * (width / 2)) + width / 4,
-            vectorX = settings.speed * (Math.random() > 0.5 ? 1 : -1),
-            vectorY = settings.speed * (Math.random() > 0.5 ? 1 : -1);
+            vectorX = settings.speed, //* (Math.random() > 0.5 ? 1 : -1), // 1: -1
+            vectorY = settings.speed; //* (Math.random() > 0.5 ? 1 : -1);
         // place initialy in a random location
         $this.css({
             'top': top,
